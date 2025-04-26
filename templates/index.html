@@ -1,0 +1,246 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <style>
+        .form-fields{
+            display:flex;
+            flex-direction:column;
+        }
+        section{ background-image:url(static/images/bg_service.png) }
+ 
+        .footer {
+            background-color: #36373a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            height:max-content;
+            width:100% !important;
+        }
+        .footer-content {
+            width:max-content
+        }
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            height:400px;
+            width:100%;
+            max-width: 500px;
+            align-items: flex-start;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            align-items: center;    
+            justify-content: center;
+        }
+        .footer-social a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+        .footer-copyright {
+            font-size: 0.8rem;
+        }
+    </style>
+<!-- ;background-color: rgba(249, 249, 255,0.4) -->
+<div class="container">
+    <div class="top-container" style="color: white;"><br>
+        <div style="width:100%;padding:5px;padding-bottom:20px;border-bottom: 1px solid #aaa;" class="gen-flex top-nav">
+            <img src="static/images/ALTERSOL ICON.png" alt="Logo" class="logo" style="height: 100px; ">
+            <div style="color: white;">
+                <h3 class="altersol" style="font-size: 1rem;color:rgb(255, 255, 255);font-weight: 500;">Altersol Consulting Limited</h3>
+            </div>
+            <div class="filler"></div>
+            <div class="navig" style="padding:10px">
+                <ul style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0;">
+                    <li><a href="#" style="text-decoration: none;">Home</a></li>
+                    <li><a href="#" style="text-decoration: none;">About</a></li>
+                    <li><a href="#" style="text-decoration: none;">Services</a></li>
+                    <li><a href="#" style="text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="large-caps gen-flex" >
+            <div style="height:max-content;">
+                <label class="sub-caption" style="font-size: ;  text-align: center; color: white;width:100%">Welcome to Our Consultancy</label>
+                <h1 id="caption" style="font-size: 4rem; font-weight: bold; text-align: left; animation: fade 9s infinite;">Your Trusted Partner in Business Solutions</h1>
+                <div style="width:max-content;border-radius: 15px;" class="btns">Contact Us</div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        const captions = [
+            "Welcome to Our Consultancy",
+            "Innovative Solutions for Your Business",
+            "Your Success is Our Priority"
+        ];
+        let index = 0;
+        const captionElement = document.getElementById("caption");
+
+        setInterval(() => {
+            index = (index + 1) % captions.length;
+            captionElement.textContent = captions[index];
+        }, 9000);
+    </script>
+
+    <style>
+        @keyframes fade {
+            0%, 100% { opacity: 0; }
+            80% { opacity: 1; }
+            20% { opacity: 1; }
+            50% { opacity: 1; }
+        }
+    </style>
+    
+</div>
+</div>
+<div class="sect-title" style="width:100%;padding:20px 10px 10px 10px;">
+    <h1 style="text-align: center;">Our Services</h1>
+    <div class="sect-subtitle" style="text-align: center;">We offer a range of services to help your business thrive.</div>
+    <div class="sect-subtitle" style="text-align: center;">Our team of experts is here to support you every step of the way.</div>
+</div>
+<div style="flex-wrap: wrap;" class="service-div gen-flex">
+    <div style="justify-content: flex-start;" class="ser-card gen-flex-col">
+        <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/consultacy-icon.png" alt="Consulting" class="ser-img"></div>
+        <div class="ser-text gen-flex-col">
+            <h3 >Consulting</h3>
+            <div class="text-centr">We provide expert advice to help you navigate complex business challenges.</div>
+        </div><br>
+        <div style="width:max-content;border-radius: 15px;" class="btns-outlined">Enquire</div>
+    </div>
+    <div style="justify-content: flex-start;" class="ser-card gen-flex-col">
+        <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/training-icon.png" alt="Consulting" class="ser-img"></div>
+        <div class="ser-text gen-flex-col">
+            <h3 >Training</h3>
+            <div class="text-centr">We provide expert advice to help you navigate complex business challenges.</div>
+        </div><br>
+        <div style="width:max-content;border-radius: 15px;" class="btns-outlined">Enquire</div>
+    </div>
+    <div style="justify-content: flex-start;" class="ser-card gen-flex-col">
+        <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/business-development-icon.png" alt="Consulting" class="ser-img"></div>
+        <div class="ser-text gen-flex-col">
+            <h3 >Business Development</h3>
+            <div class="text-centr">We provide expert advice to help you navigate complex business challenges.</div>
+        </div><br>
+        <div style="width:max-content;border-radius: 15px;" class="btns-outlined">Enquire</div>
+    </div>
+</div>
+
+
+
+<div style="flex-wrap: wrap;background-color: #173981;max-width: none;width: 100%;" id="contact-us-div" class="service-div gen-flex">
+    <div class="sect-title" style="width:100%;padding:20px 0px 0px 0px;">
+        <h1 style="text-align: center;color:aliceblue">Let Us Talk</h1>
+        <div class="sect-subtitle" style="text-align: center;color:aliceblue"> Let us help you achieve your business goals.</div>
+    </div>
+    <br>
+    <div id="contact-us" style="width:40%; padding:20px;" class="border-spec fader">
+        <div class="flash-messages" class="btns-outlined">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for  category, message in messages %}
+                        <div class="flash-messages alert-{{category}}"> {{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}</div>
+        <h1 >We would like to hear from you, <br><span class="spans">Write to us</span></h1>
+        <div class="contact-form">
+            <form style="width:100%;" action = "{{url_for('contact_us')}}" method="post" >
+                {{contact_form.hidden_tag()}}
+                <div  style="width:100%;">
+                    {{contact_form.name(class="contact-form-control",placeholder="Name")}}
+                </div>
+                 <div>
+                    {{contact_form.email(class="contact-form-control",placeholder="Email Address")}}
+                </div>
+                <div>
+                    {{contact_form.subject(class="contact-form-control",placeholder="Subject")}}
+                </div>
+                <div>
+                    {{contact_form.message(class="contact-form-control  text-area",placeholder="Message")}}
+                </div>
+                <div>
+                    {{contact_form.submit}}
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="image-conctact-us fader">
+        <img src="static/images/contact-us.jpg" alt="pexels-kampus-8204385" class="contact-us-img">
+    </div>
+</div>
+
+<div style="flex-wrap: wrap;" class="service-div gen-flex">
+    <div class="sect-title" style="width:100%;padding:20px 0px 0px 0px;">
+        <h1 style="text-align: center;">Our Partners</h1>
+        <div class="sect-subtitle" style="text-align: center;">We are proud to work with leading organizations in the industry.</div>
+    </div>
+    <br>
+    <div style="z-index:400;background-color:;" id="welcome-design">
+        <div class="slider-container">
+            <div class="slider">
+                {% for image in partners_imgs%}
+                    <img src="{{ image.replace('\\', '/') }}" alt="partners">
+
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="width:100% !important" class="footer">
+    <div style="flex-wrap: ;" class="footer-content gen-flex">
+        <div class="footer-links gen-flex-col">
+            <div id="footer-addr" style="width:max-content;margin: 0 auto;color:white">
+                <div><img style="height:auto;width:100px" src="static/images/altersol_white.png" alt="Consulting" class="ser-img"></div>
+                <div style="max-width: 500px;width:100%">Find Us at: Mandlenkosi Building behind Dups, 1st Floor, Office#, Manzini, Eswatini</div>
+                <div class="footer-social gen-flex">
+                    <a href="tel:7602 5661"><div class="gen-flex"><img style="height:45px;" src="static/icons/telephone_icon.png" /><span>(+268) 2505 7615 / 7602 5661</span></div></a>
+                    <a href="mailto:info@altersol.net"><div class="gen-flex"><img style="height:45px;" src="static/icons/email_icon.png" /><span>info@altersol.net</span></div></a>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div class="footer-links gen-flex-col">
+            <a href="#"> Business Development</a>
+            <a href="#"> Training</a>
+            <a href="#"> Consultancy Services</a>
+            <a href="#"> Other Related</a>
+        </div>
+        <div class="footer-links gen-flex-col">
+            <a href="#">Home</a>
+            <a href="#"> About</a>
+            <a href="#"> Services</a>
+            <a href="#"> Contact</a>
+        </div>
+        <div class="footer-links gen-flex-col">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">FAQ</a>
+            <a href="#">Support</a>
+        </div>
+
+    </div>
+    <div class="footer-copyright">
+        &copy; 2025 Altersol Consulting Limited. All rights reserved.
+    </div>
+</div>
+
+
+
+
+<script>
+    
+</script>
+{% endblock %}
+
