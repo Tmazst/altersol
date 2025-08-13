@@ -1074,10 +1074,76 @@ html,body{
     border-bottom-right-radius: 15px;
 }
 
+.ser-title-dec{
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.ser-description{
+    text-align: center;
+    max-width: 700px;
+    color:#2b2b2b
+}
+
+.Recruitment-bg{
+    /* background-color: #f1f1f1; */
+
+}
+
+.vacancy-cont{
+    border-radius: 14px;
+    border: 1px solid #c9c9c9;
+}
+
+.arrow-icon{
+    opacity: 0.7;
+    height:30px
+}
+
+.vacancy-cont{
+    width:100%;
+    max-width: 500px;
+    height: fit-content;
+    position: relative;
+}
+.job-ad-img{
+    width:inherit;
+}
+
+#open-job-details{
+    position: absolute;
+    bottom: 10px;
+    transform: translate(-50%, -50%);
+    left:50%;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+}
+
+.text-centr{
+    color:var(--primary-color);
+    font-weight: 500;
+    text-align: center;
+}
+
+.read-more-trigger{
+    justify-content: flex-start;
+}
+
+.ser-text h3{
+    color: #303030;
+}
+
+li{
+    color: #2b2b2b;
+}
+
 .fader{
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.6s ease, transform 0.6s ease-out;
+}
+
+.read-more{
+    font-weight: 600;
+    color:var(--primary-color)
 }
 
 .ser-card{
@@ -1085,7 +1151,7 @@ html,body{
     border-radius:15px;
     width:300px;
     min-height:500px;
-    padding:20px 10px;
+    padding:20px 15px;
     align-items: stretch;
     opacity: 0;
     transform: translateY(20px);
@@ -1111,7 +1177,7 @@ html,body{
 
 
 .logo{
-    background-color:rgba(240, 240, 240, 0.5);
+    background-color:rgba(240, 240, 240, 1);
     border-radius:50%;
     padding:5px;
 }

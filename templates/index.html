@@ -47,15 +47,45 @@
         .footer-copyright {
             font-size: 0.8rem;
         }
+        .ser-card.modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            z-index: 9999;
+            max-width: 600px;
+            width: 90%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+        }
+
+        .modal.active {
+            display: flex !important;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 9998;
+        }
+
+        .modal-overlay.active {
+            display: block;
+        }
     </style>
 <!-- ;background-color: rgba(249, 249, 255,0.4) -->
 <div class="container">
     <div class="top-container" style="color: white;"><br>
         <div style="width:100%;padding:5px;padding-bottom:20px;border-bottom: 1px solid #aaa;" class="gen-flex top-nav">
             <img src="static/images/altersol_logo.png" alt="Logo" class="logo" style="height: 100px; ">
-            <div style="color: white;">
+            <!-- <div style="color: white;">
                 <h3 class="altersol" style="font-size: 1rem;color:rgb(255, 255, 255);font-weight: 500;">Altersol Consulting Limited</h3>
-            </div>
+            </div> -->
             <div class="filler"></div>
             <div class="navig" style="padding:10px">
                 <ul style="list-style: none; display: flex; gap: 15px; margin: 0; padding: 0;">
@@ -114,28 +144,135 @@
         <div class="ser-text gen-flex-col">
             <h3 >Consulting</h3>
             <div class="text-centr">We provide expert advice to help you navigate complex business challenges.</div>
-        </div><br>
+        </div>
+        <ul>
+            <li>Organizational analysis and
+            development</li>
+            <li>Teambuilding</li>
+            <li>Strategic planning</li>
+            <li>Process and financial analysis</li><br>
+            <div class="read-more-trigger gen-flex" data-target="consulting-modal">
+                <span class="read-more">Read More</span>
+                <img src="static/icons/arrow-icon.png" alt="read-more" class="arrow-icon" />
+            <div>
+        </ul>
+        <br>
         <div style="width:max-content;border-radius: 15px;" class="btns-outlined">Enquire</div>
     </div>
+
+    <div id="consulting-modal" class="ser-card gen-flex-col modal">
+        <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/consultacy-icon.png" alt="Consulting" class="ser-img"></div>
+        <div class="ser-text gen-flex-col">
+            <h3 >Consulting</h3>
+            <div class="text-centr">We provide expert advice to help you navigate complex business challenges.</div>
+        </div>
+        <ul>
+            <li>Organizational and project evaluations</li>
+            <li>Integrated Development Planning</li>
+            <li>Workshop facilitation and documentation</li>
+            <li>Policy development</li>
+            <li>Personal and business coaching</li>
+            <li>Performance Management Systems</li>
+            <li>Conducting research</li>
+            <li>Stakeholder engagement/consultations</li>
+            <li>Board induction</li>
+            <li>Business Development Services</li>
+            <li>And many more customer-specific processes</li>
+        </ul>
+    </div>
+
     <div style="justify-content: flex-start;" class="ser-card gen-flex-col">
         <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/training-icon.png" alt="Consulting" class="ser-img"></div>
         <div class="ser-text gen-flex-col">
             <h3 >Training</h3>
             <div class="text-centr">Enhance productivity, leadership, and communication through tailored sessions designed to drive success.</div>
+        </div>
+        <ul>
+            <li>Business management training</li>
+            <li>Entrepreneurship</li>
+            <li>Managing personal finance</li>
+            <li>Exit preparedness</li>
+        </ul>
+        <div class="read-more-trigger gen-flex" data-target="training-modal">
+            <span class="read-more">Read More</span>
+            <img src="static/icons/arrow-icon.png" alt="read-more" class="arrow-icon" />
         </div><br>
         <div style="width:max-content;border-radius: 15px;" class="btns-outlined">Enquire</div>
     </div>
+
+    <div id="training-modal" class="ser-card gen-flex-col modal">
+        <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/training-icon.png" alt="Consulting" class="ser-img"></div>
+        <div class="ser-text gen-flex-col">
+            <h3 >Training</h3>
+            <div class="text-centr">We provide expert advice to help you navigate complex business challenges.</div>
+        </div>
+        <ul>
+            <li>Business management training</li>
+            <li>Entrepreneurship</li>
+            <li>Managing personal finance</li>
+            <li>Exit preparedness (retirement, retrenchment, restructuring, etc)</li>
+            <li>Corporate governance</li>
+            <li>Leadership (Principles and practice)</li>
+            <li>Customer service</li>
+            <li>Negotiation skills</li>
+            <li>Interpersonal skills</li>
+            <li>Performance management</li>
+            <li>Business planning</li>
+        </ul>
+    </div>
+
+
+
     <div style="justify-content: flex-start;" class="ser-card gen-flex-col">
         <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/business-development-icon.png" alt="Consulting" class="ser-img"></div>
         <div class="ser-text gen-flex-col">
             <h3 >Business Development</h3>
             <div class="text-centr">Accelerate growth with our Business Development training! Learn proven strategies to expand markets, boost sales, 
                 and build lasting partnerships.</div>
+        </div><ul>
+            <li>Business management training</li>
+            <li>Entrepreneurship</li>
+            <li>Managing personal finance</li>
+            <li>Exit preparedness</li>
+        </ul>
+        <div class="read-more-trigger gen-flex" data-target="development-modal">
+            <span class="read-more">Read More</span>
+            <img src="static/icons/arrow-icon.png" alt="read-more" class="arrow-icon" />
         </div><br>
         <div style="width:max-content;border-radius: 15px;" class="btns-outlined">Enquire</div>
     </div>
+
+    
+    <!-- <div id="development-modal" class="ser-card gen-flex-col modal">
+        <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/training-icon.png" alt="Consulting" class="ser-img"></div>
+        <div class="ser-text gen-flex-col">
+            <h3 >Business Development</h3>
+            <div class="text-centr">We provide expert advice to help you navigate complex business challenges.</div>
+        </div>
+        <ul>
+            <li>Business management training</li>
+            <li>Entrepreneurship</li>
+            <li>Managing personal finance</li>
+            <li>Exit preparedness (retirement, retrenchment, restructuring, etc)</li>
+            <li>Corporate governance</li>
+            <li>Leadership (Principles and practice)</li>
+            <li>Customer service</li>
+            <li>Negotiation skills</li>
+            <li>Interpersonal skills</li>
+            <li>Performance management</li>
+            <li>Business planning</li>
+        </ul>
+    </div> -->
 </div>
 
+<div style="flex-wrap: wrap;" class="service-div gen-flex-col Recruitment-bg">
+    <h2 class="ser-title-dec">Executive Recruitment</h2>
+    <h4 class="ser-description">We specialize in identifying and placing senior management talent for prominent organizations, ensuring leadership that drives growth and success.</h4>
+    <div class="vacancy-cont">
+        <img src="{{url_for('static',filename='images/advert_ceo_pggs_peak.png')}}" class="job-ad-img" alt="job-advert" />
+        <button id="open-job-details" class="btns">Open Details</button>
+    </div>
+</div>
 
 
 <div style="flex-wrap: wrap;background-color: #173981;max-width: none;width: 100%;" id="contact-us-div" class="service-div gen-flex">
@@ -192,14 +329,13 @@
             <div class="slider">
                 {% for image in partners_imgs%}
                     <img src="{{ image.replace('\\', '/') }}" alt="partners">
-
                 {%endfor%}
             </div>
         </div>
     </div>
 </div>
 
-<div style="width:100% !important" class="footer">
+<div style="width:100% !important;max-width:900px !important" class="footer">
     <div style="flex-wrap: ;" class="footer-content gen-flex">
         <div class="footer-links gen-flex-col">
             <div id="footer-addr" style="width:max-content;margin: 0 auto;color:white">
@@ -241,7 +377,30 @@
 
 
 <script>
-    
+    document.addEventListener("DOMContentLoaded", function() {
+        const triggers = document.querySelectorAll(".read-more-trigger");
+        const overlay = document.createElement("div");
+        overlay.className = "modal-overlay";
+        document.body.appendChild(overlay);
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener("click", function() {
+                const targetId = this.getAttribute("data-target");
+                const modal = document.getElementById(targetId);
+                if (modal) {
+                    modal.classList.add("active");
+                    overlay.classList.add("active");
+                }
+            });
+        });
+
+        overlay.addEventListener("click", function() {
+            document.querySelectorAll(".modal.active").forEach(modal => {
+                modal.classList.remove("active");
+            });
+            overlay.classList.remove("active");
+        });
+    });
 </script>
 {% endblock %}
 
