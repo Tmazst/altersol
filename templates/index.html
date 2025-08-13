@@ -133,12 +133,29 @@
     
 </div>
 </div>
+
+<!-- About  -->
+ <div id="about" style="flex-wrap: wrap;background-color: #b99211;max-width: none;width: 100%;" id="contact-us-div" class="service-div gen-flex">
+    <div class="sect-title" style="width:100%;padding:20px 0px 0px 0px;">
+        <h1 style="text-align: center;color:aliceblue;border-bottom: 1px solid white;width:300px;margin: 10px auto;">Who We Are</h1>
+    </div>
+    <br>
+    <div class="gen-flex about-content">
+        <div class="sect-about" style="text-align: center;color:aliceblue"> Having observed leadership and management gaps in the corporate and development space in Swaziland and the SADC Region, the need for alternative solutions became evident, resulting in the birth of ALTERSOL CONSULTING (Pty) Limited. <br><br> Altersol is a management and development consultancy and training company focussing on helping organizations on a wide range of business and development challenges. Our company offers services to private companies, NGOs, state-owned enterprises, international development agencies, government departments, and farmers organizations.</div>
+        <div class="image-conctact-us fader">
+            <img src="static/images/corporate_images_a_sales_representative.webp" alt="pexels-kampus-8204385" class="about-us-img">
+        </div>
+    </div>
+    
+</div>
+
 <div class="sect-title" style="width:100%;padding:20px 10px 10px 10px;">
     <h1 style="text-align: center;">Our Services</h1>
     <div class="sect-subtitle" style="text-align: center;">We offer a range of services to help your business thrive.</div>
     <div class="sect-subtitle" style="text-align: center;">Our team of experts is here to support you every step of the way.</div>
 </div>
-<div style="flex-wrap: wrap;" class="service-div gen-flex">
+<!-- Services  -->
+<div id="services" style="flex-wrap: wrap;align-items: stretch;" class="service-div gen-flex">
     <div style="justify-content: flex-start;" class="ser-card gen-flex-col">
         <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/consultacy-icon.png" alt="Consulting" class="ser-img"></div>
         <div class="ser-text gen-flex-col">
@@ -179,6 +196,7 @@
             <li>Business Development Services</li>
             <li>And many more customer-specific processes</li>
         </ul>
+        <div onclick="closeModals(event)" data-target="close-consulting-modal" style="width:max-content;border-radius: 15px;" class="btns-outlined">Close</div>
     </div>
 
     <div style="justify-content: flex-start;" class="ser-card gen-flex-col">
@@ -219,6 +237,7 @@
             <li>Performance management</li>
             <li>Business planning</li>
         </ul>
+        <div onclick="closeModals(event)" style="width:max-content;border-radius: 15px;" class="btns-outlined">Close</div>
     </div>
 
 
@@ -229,13 +248,14 @@
             <h3 >Business Development</h3>
             <div class="text-centr">Accelerate growth with our Business Development training! Learn proven strategies to expand markets, boost sales, 
                 and build lasting partnerships.</div>
-        </div><ul>
+        </div>
+        <ul>
             <li>Business management training</li>
             <li>Entrepreneurship</li>
             <li>Managing personal finance</li>
             <li>Exit preparedness</li>
         </ul>
-        <div class="read-more-trigger gen-flex" data-target="development-modal">
+        <div class="read-more-trigger gen-flex" data-target="consulting-modal">
             <span class="read-more">Read More</span>
             <img src="static/icons/arrow-icon.png" alt="read-more" class="arrow-icon" />
         </div><br>
@@ -265,17 +285,32 @@
     </div> -->
 </div>
 
-<div style="flex-wrap: wrap;" class="service-div gen-flex-col Recruitment-bg">
+<div id="recruitment" style="flex-wrap: wrap;" class="service-div gen-flex-col Recruitment-bg">
     <h2 class="ser-title-dec">Executive Recruitment</h2>
     <h4 class="ser-description">We specialize in identifying and placing senior management talent for prominent organizations, ensuring leadership that drives growth and success.</h4>
     <div class="vacancy-cont">
         <img src="{{url_for('static',filename='images/advert_ceo_pggs_peak.png')}}" class="job-ad-img" alt="job-advert" />
-        <button id="open-job-details" class="btns">Open Details</button>
+        <div id="open-job-details"  class="gen-flex">
+            <button data-target="recruitment-modal" class="btns read-more-trigger">Open Details</button>
+            <button data-target="recruitment-modal"  class="btns-outlined read-more-trigger">Download PDF</button>
+        </div>
     </div>
 </div>
 
+<div id="recruitment-modal" class="ser-card gen-flex-col modal">
 
-<div style="flex-wrap: wrap;background-color: #173981;max-width: none;width: 100%;" id="contact-us-div" class="service-div gen-flex">
+    <div style="border:none" class="vacancy-cont">
+        <img src="{{url_for('static',filename='images/advert_ceo_pggs_peak.png')}}" class="job-ad-img" alt="job-advert" />
+    </div>
+    <div class="job-description-full">
+        <h1>Coming Soon!</h1>
+    </div>
+    <div onclick="closeModals(event)" style="width:max-content;border-radius: 15px;" class="btns-outlined">Close</div>
+        
+</div>
+
+
+<div  style="flex-wrap: wrap;background-color: #173981;max-width: none;width: 100%;" id="contact-us-div" class="service-div gen-flex">
     <div class="sect-title" style="width:100%;padding:20px 0px 0px 0px;">
         <h1 style="text-align: center;color:aliceblue">Let Us Talk</h1>
         <div class="sect-subtitle" style="text-align: center;color:aliceblue"> Let us help you achieve your business goals.</div>
@@ -335,7 +370,7 @@
     </div>
 </div>
 
-<div style="width:100% !important;max-width:900px !important" class="footer">
+<div style="width:100% !important;" class="footer">
     <div style="flex-wrap: ;" class="footer-content gen-flex">
         <div class="footer-links gen-flex-col">
             <div id="footer-addr" style="width:max-content;margin: 0 auto;color:white">
@@ -375,7 +410,6 @@
 
 
 
-
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const triggers = document.querySelectorAll(".read-more-trigger");
@@ -401,6 +435,17 @@
             overlay.classList.remove("active");
         });
     });
+
+function closeModals(){
+    console.log("Clicked")
+    var modals = document.querySelectorAll(".modal");
+    var overLay = document.querySelector(".modal-overlay");
+    modals.forEach(modal => {
+        modal.classList.remove('active');
+    });
+   overLay.classList.remove('active');
+}
+
 </script>
 {% endblock %}
 

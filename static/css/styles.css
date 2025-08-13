@@ -492,7 +492,7 @@ overflow:scroll;
     padding:10px;
     color:white;
     font-weight:bold;
-    border-radius:5px;
+    border-radius:20px;
     background-color:var(--primary-color);
     position:relative;
     transition: all 0.5s ease;
@@ -1073,6 +1073,17 @@ html,body{
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
 }
+.sect-about{
+    font-size: 22px;
+    font-weight: 500px;
+    padding:15px;
+    max-width: 500px;
+}
+.about-us-img{
+    height: 500px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
 
 .ser-title-dec{
     border-bottom: 1px solid var(--secondary-color);
@@ -1111,10 +1122,10 @@ html,body{
 
 #open-job-details{
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     transform: translate(-50%, -50%);
     left:50%;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+    /* box-shadow: 0 5px 25px rgba(0,0,0,0.3); */
 }
 
 .text-centr{
@@ -2001,6 +2012,10 @@ to{
         font-weight: 500 !important;
     }
 
+    .about-content{
+        flex-wrap: wrap !important;
+    }
+
     .footer-links{
         height:auto
     }
@@ -2103,6 +2118,9 @@ to{
 }
 
 @media all and (max-width: 700px){
+    .about-content{
+        flex-wrap: wrap !important;
+    }
     #caption{
         font-size:40px !important;
     }
