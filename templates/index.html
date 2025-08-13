@@ -218,7 +218,7 @@
         <div style="width:max-content;border-radius: 15px;" class="btns-outlined">Enquire</div>
     </div>
 
-    <div id="training-modal" class="ser-card gen-flex-col modal">
+    <div id="training-modal"  class="ser-card gen-flex-col modal">
         <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/training-icon.png" alt="Consulting" class="ser-img"></div>
         <div class="ser-text gen-flex-col">
             <h3 >Training</h3>
@@ -417,14 +417,17 @@
         const overlay = document.createElement("div");
         overlay.className = "modal-overlay";
         document.body.appendChild(overlay);
-
+        console.log("request receved");
         triggers.forEach(trigger => {
             trigger.addEventListener("click", function() {
+                
                 const targetId = this.getAttribute("data-target");
                 const modal = document.getElementById(targetId);
+                console.log("trigger receved: ",modal);
                 if (modal) {
                     modal.classList.add("active");
                     overlay.classList.add("active");
+                     modal.classList.add('fade-in');
                 }
             });
         });
@@ -438,7 +441,6 @@
     });
 
 function closeModals(){
-    console.log("Clicked")
     var modals = document.querySelectorAll(".modal");
     var overLay = document.querySelector(".modal-overlay");
     modals.forEach(modal => {

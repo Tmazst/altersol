@@ -86,7 +86,8 @@ function isInViewport(element, offset = 100) {
 }
 
 document.addEventListener('scroll', () => {
-    const cards = document.querySelectorAll('.ser-card');
+    // Only target cards that are NOT modals
+    const cards = document.querySelectorAll('.ser-card:not(.modal)');
     const contactSection = document.querySelectorAll('.fader');
 
     cards.forEach((element, index) => {
