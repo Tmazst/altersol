@@ -1331,6 +1331,10 @@ to{
     position:relative;
 }
 
+.read-more-trigger:hover{
+    cursor: pointer;
+}
+
 .border-art::after{
     position:absolute;
     top:-60px;
