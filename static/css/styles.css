@@ -2144,6 +2144,8 @@ to{
     .modal{
         max-height: 90vh !important;
         overflow: auto;
+        padding-top:10px;
+        padding-bottom: 10px;
     }
     #open-job-details{
         width:100% !important
