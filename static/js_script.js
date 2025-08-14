@@ -118,6 +118,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 350 * index);     
         } 
     });
+
+    
+    var sideNavLinks = document.querySelectorAll(".saas-nav-item");
+    var sideNav = document.getElementById("side-navig-bg");
+    let sideNavCont = document.querySelector("#side-navig-cont");
+
+    sideNavLinks.forEach(function(link) {
+        link.addEventListener("click", function() {
+            sideNav.classList.remove("show-popup");
+            sideNavCont.classList.remove("show-menu");
+
+        });
+    });
+
+    // document.addEventListener("click", function(e) {
+    //     if (!sideNav.contains(e.target) && !e.target.closest(".menu-toggle")) {
+    //         sideNav.classList.remove("show-popup");
+    //         sideNavCont.classList.remove("show-menu");
+    //     }
+    // });
+
 });
 
 // Services Cards ends
@@ -145,6 +166,7 @@ var noSections = sections.length;
 var progressCont = document.querySelectorAll(".progress-cont");
 var progressCount = document.querySelectorAll(".progress-no");
 let indexList = [];
+
 
 
 function changeProgressColor(){

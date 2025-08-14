@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+:root {
+    --bg: #f7f9fb;
+    --card: #ffffff;
+    --text: #1f2937; /* slate-800 */
+    --muted: #4b5563; /* slate-600 */
+    --brand: #24568E; /* green */
+    --brand-2: #f7a901; /* accent blue for small details */
+    --ring: rgba(46, 74, 125, 0.25);
+}
+
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+margin: 0;
+font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+color: var(--text);
+background: radial-gradient(1200px 800px at 10% 0%, #eef7f0 0%, transparent 55%),
+radial-gradient(900px 600px at 90% 10%, #eef6fb 0%, transparent 50%),
+var(--bg);
+    line-height: 1.6;
+}
+
+
+.wrap {
+    max-width: 900px;
+    margin: min(6vh, 56px) auto;
+    padding: 0 16px;
+    background-color: #f1f1f1;
+    border-top: 3px solid #f7a901;
+    padding-top:30x;
+}
+
+
+.card {
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(221, 221, 221, 0.3);
+    overflow: hidden;
+    border: 1px solid #f7a901;
+    margin-top: 60px;
+}
+
+
+.ribbon {
+    height: 8px;
+    background: linear-gradient(90deg, var(--brand), #439ef3 40%, #e2cd13 60%, var(--brand));
+}
+
+
+header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: center;
+    padding: 28px 28px 16px 28px;
+    border-bottom: 1px solid #eef2f7;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fbf9 100%);
+}
+
+
+.title {
+    margin: 0;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+li{
+    font-size: clamp(1.1rem);
+}
+
+
+.subtitle {
+margin: 6px 0 0;
+color: var(--muted);
+font-weight: 500;
+}
+
+
+.brand {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+justify-self: end;
+padding: 8px 12px;
+border: 1px solid #e5e7eb;
+border-radius: 10px;
+background: #fff;
+box-shadow: 0 2px 8px rgba(2, 6, 23, 0.06);
+font-weight: 700;
+color: var(--brand);
+text-transform: uppercase;
+letter-spacing: 0.05em;
+}
+
+
+.brand-badge {
+width: 10px;
+height: 10px;
+border-radius: 2px;
+background: var(--brand);
+box-shadow: 0 0 0 4px var(--ring);
+}
+
+
+main { padding: 20px 28px 28px; }
+
+
+.section {
+margin: 20px 0 0;
+padding: 18px 20px;
+border: 1px solid #e4e5e6;
+border-left: 4px solid var(--brand);
+border-radius: 12px;
+background: linear-gradient(180deg, rgba(28, 56, 133, 0.03), transparent 60%);
+}
+
+
+
+.section h2 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+}
+
+
+p { margin: 0.5em 0; }
+
+
+ul { margin: 0.4em 0 0 1.25em; }
+
+
+li { margin: 0.4em 0; }
+
+.footer {
+    margin-top: 22px;
+    padding: 16px 20px;
+    border-top: 1px dashed #e5e7eb;
+    font-size: 0.95rem;
+    color: var(--muted);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.tag {
+font-size: 0.85rem;
+background: #f1f5f9;
+border: 1px solid #e2e8f0;
+border-radius: 999px;
+padding: 4px 10px;
+}
+
+
+/* Print styles */
+@media print {
+    body { background: #fff; }
+    .wrap { margin: 0; padding: 0; }
+    .card { box-shadow: none; border: none; }
+    .ribbon { display: none; }
+    header { border-bottom: 2px solid var(--brand); }
+    .section { break-inside: avoid; }
+    .footer { border-top: none; }
+}
+</style>
+<div class="wrap">
+    <article class="card" role="article" aria-labelledby="job-title">
+    <div class="ribbon" aria-hidden="true"></div>
+    <header>
+        <div style="position: relative;">
+            <h1 id="job-title" class="title">Chief Executive Officer / Town Clerk</h1>
+            <p class="subtitle">Our Client, an Urban Local Government, is looking to fill this vacancy.</p>
+            </div>
+            <div class="brand" aria-label="Company">
+            <span class="brand-badge" aria-hidden="true"><img src="static/images/altersol_logo1.png" alt="Logo" class="logo" style="height: 10px; "></span>
+            <span>AlterSol Consulting Limited</span>
+            <!-- <img src="static/images/altersol_logo1.png" alt="Logo" class="logo-on-ad" style="height: 10px; "> -->
+        </div>
+    </header>
+
+    <main>
+    <section class="section" aria-labelledby="pos-heading">
+        <h2 id="pos-heading">The Position</h2>
+        <p>
+            The Chief Executive Officer/Town Clerk oversees all aspects of running the town, working with the staff and Council to
+            enforce decisions and laws created by the Council. A dynamic, innovative and solution-driven individual, the incumbent shall
+            be responsible for providing strategic leadership, ensuring effective implementation of the Council policies and procedures,
+            managing the council’s operations and promoting socio-economic development in the town.
+        </p>
+    </section>
+
+
+    <section class="section" aria-labelledby="roles-heading">
+        <h2 id="roles-heading">Key roles and responsibilities</h2>
+        <ul>
+            <li>Provide strategic management to the Council</li>
+            <li>Develop and implement Integrated Development Plans and Budgets</li>
+            <li>Provide information, technical advice, decision-making support and secretarial support to Council and Council Committees</li>
+            <li>Ensure implementation of Council resolution, programmes, policies, projects</li>
+            <li>Ensure proper town development through implementing and monitoring approved township development policies, Capital Investment Program, resolutions and budgets of the Town Council</li>
+            <li>Ensure good corporate governance practices in the Municipality</li>
+            <li>Properly represent the town to the media and public</li>
+            <li>Lead robust service delivery and address concerns of town residents</li>
+        </ul>
+    </section>
+
+
+    <section class="section" aria-labelledby="reqs-heading">
+        <h2 id="reqs-heading">Requirements</h2>
+        <ul>
+            <li>Master’s Degree in: Public Administration, Business Administration/Leadership</li>
+            <li>5–10 years experience in an executive management position in a medium to large organization</li>
+            <li>A qualification in economics, urban design &amp; planning or similar qualification will be an added advantage</li>
+            <li>A good understanding of local government and/or public sector management</li>
+            <li>Exceptional written and verbal communication skills to convey ideas to staff and interact positively with stakeholders</li>
+            <li>Delegation skills to assign tasks to department heads</li>
+            <li>Knowledge of local laws and policies</li>
+            <li>Critical thinking skills to approach complex town issues creatively</li>
+            <li>Financial skills for effective budget management</li>
+            <li>Negotiation and problem-solving skills to handle difficult situations</li>
+            <li>Diplomacy when handling sensitive and possibly divisive matters</li>
+        </ul>
+    </section>
+
+    <section class="section" aria-labelledby="reqs-heading">
+        <h2 id="reqs-heading">Application Proceedure & Deadline</h2>
+        <p style="font-weight:500">Applications with detailed CVs should be emailed to <span><a href="mailto:hr@altersol.net">hr@altersol.net</a> </span>
+on or before August 19, 2025.</p>
+    </section>
+
+
+    <div class="footer" role="contentinfo">
+        
+        <button onclick="window.print();"  class="btns-outlined">Download/Print</button>
+        <span class="tag">Position: Executive</span>
+        <span class="tag">Department: Council Administration</span>
+        <span class="tag">Employment: Full-time</span>
+        </div>
+    </main>
+    </article>
+</div>
+
+{%endblock%}

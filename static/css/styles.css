@@ -180,9 +180,15 @@ html {-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 
 }
 
+.btn-no-border{
+    border:none;
+    border-radius:20px;
+}
+
 .group{
     margin:20px 0px;
 }
+
 
 .user-sec-page{
     display:flex;
@@ -192,6 +198,11 @@ html {-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
 .a-links{
     text-decoration:none;
     color:#303030;
+    white-space:nowrap;
+}
+
+.a-links:hover{
+    opacity: 0.8;
 }
 
 .options span{
@@ -1366,7 +1377,6 @@ to{
 
 
 .nav-links a:hover{
-  //color:#006769;
   letter-spacing: 5px;
   border-bottom:1px solid coral;
 }
@@ -1920,6 +1930,10 @@ to{
     transform:rotate(45deg)
 }
 
+.slider img{
+    transform: scale(0.7);
+}
+
 .show-popup{
     display:flex !important;
     animation:opacit 0.5s;
@@ -2126,6 +2140,11 @@ to{
 }
 
 @media all and (max-width: 700px){
+
+    .modal{
+        max-height: 90vh !important;
+        overflow: auto;
+    }
     #open-job-details{
         width:100% !important
     }

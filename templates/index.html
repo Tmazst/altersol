@@ -77,6 +77,8 @@
         .modal-overlay.active {
             display: block;
         }
+
+        /* Job Advert  */
     </style>
 <!-- ;background-color: rgba(249, 249, 255,0.4) -->
 <div class="container">
@@ -101,8 +103,8 @@
             <div style="height:max-content;">
                 <label class="sub-caption" style="font-size: ;  text-align: center; color: white;width:100%">Welcome to Our Consultancy</label>
                 <h1 id="caption" style="font-size: 4rem; font-weight: bold; text-align: left; animation: fade 9s infinite;">Your Trusted Partner in Business Solutions</h1>
-                <a href="#contact-us-div" style="width:max-content;border-radius: 15px;" class="btns a-links">Contact Us</a>
-                <a href="#recruitment" style="width:max-content;border-radius: 15px;" class="btns-outlined a-links">Current Job Openings</a>
+                <a href="#contact-us-div" style="width:max-content;border-radius: 15px;" class="btns a-links">Contact Us</a><br><br><br>
+                <a href="#recruitment" style="width:max-content;border-radius: 15px;color:#f7a901;font-weight: 600;font-size: 20px;" class="a-links">Find Current Job Openings here &rarr;</a>
             </div>
         </div>
 
@@ -242,7 +244,6 @@
     </div>
 
 
-
     <div style="justify-content: flex-start;" class="ser-card gen-flex-col">
         <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/business-development-icon.png" alt="Consulting" class="ser-img"></div>
         <div class="ser-text gen-flex-col">
@@ -263,27 +264,6 @@
         <a href="#contact-us-div" style="width:max-content;border-radius: 15px;" class="btns-outlined">Enquire</a href="#contact-us-div">
     </div>
 
-    
-    <!-- <div id="development-modal" class="ser-card gen-flex-col modal">
-        <div style="width:max-content;margin: 0 auto;border-bottom: 1px solid #24568E;"><img src="static/icons/training-icon.png" alt="Consulting" class="ser-img"></div>
-        <div class="ser-text gen-flex-col">
-            <h3 >Business Development</h3>
-            <div class="text-centr">We provide expert advice to help you navigate complex business challenges.</div>
-        </div>
-        <ul>
-            <li>Business management training</li>
-            <li>Entrepreneurship</li>
-            <li>Managing personal finance</li>
-            <li>Exit preparedness (retirement, retrenchment, restructuring, etc)</li>
-            <li>Corporate governance</li>
-            <li>Leadership (Principles and practice)</li>
-            <li>Customer service</li>
-            <li>Negotiation skills</li>
-            <li>Interpersonal skills</li>
-            <li>Performance management</li>
-            <li>Business planning</li>
-        </ul>
-    </div> -->
 </div>
 
 <!--Recruitment-->
@@ -293,22 +273,23 @@
     <div class="vacancy-cont">
         <img src="{{url_for('static',filename='images/advert_ceo_pggs_peak.png')}}" class="job-ad-img" alt="job-advert" />
         <div id="open-job-details"  class="gen-flex">
-            <button data-target="recruitment-modal" class="btns read-more-trigger">Open Details</button>
-            <button data-target="recruitment-modal"  class="btns-outlined read-more-trigger">Download PDF</button>
+            <a href="/recruitment" data-target="recruitment-modal" class="btns a-links">Open Details</a>
+            <button onclick="sharePage()" class="btn-no-border"><div class="gen-flex">
+                <img style="height:30px"  src="static/icons/share-icon.png"/>
+                <span style="white-space: nowrap;font-weight: 600;color: #36373a;padding:7px">Share Job</span></div>
+            </button>
         </div>
     </div>
 </div>
 
 <div id="recruitment-modal" class="ser-card gen-flex-col modal">
-
     <div style="border:none" class="vacancy-cont">
         <img src="{{url_for('static',filename='images/advert_ceo_pggs_peak.png')}}" class="job-ad-img" alt="job-advert" />
     </div>
     <div class="job-description-full">
         <h1>Coming Soon!</h1>
     </div>
-    <div onclick="closeModals(event)" style="width:max-content;border-radius: 15px;" class="btns-outlined">Close</div>
-        
+    <div onclick="closeModals(event)" style="width:max-content;border-radius: 15px;" class="btns-outlined">Close</div>     
 </div>
 
 
@@ -449,6 +430,25 @@ function closeModals(){
     });
    overLay.classList.remove('active');
 }
+
+  function sharePage() {
+    if (navigator.share) {
+      navigator.share({
+        title: document.title,
+        text: "Check out this job opening!",
+        url: 'https://www.altersol.net/#recruitment'
+      })
+      .then(() => console.log("Page shared successfully"))
+      .catch(err => console.error("Error sharing:", err));
+    } else {
+      alert("Sharing not supported in this browser.");
+    }
+  }
+
+// function openPrint(){
+//     window.location.href='/recruitment';
+    
+// }
 
 </script>
 {% endblock %}

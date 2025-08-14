@@ -1,5 +1,5 @@
 
-from flask import Flask,render_template,url_for,redirect,request,flash,jsonify
+from flask import Flask,render_template,url_for,redirect,request,flash,jsonify,send_from_directory
 from flask_login import login_user, LoginManager,current_user,logout_user, login_required
 from Forms import Register, Login,Contact_Form, Project_Form, Web_Design_Brief,Logo_Options,Poster_Options,Brochure_Options,Flyer_Options
 from models import *
@@ -145,7 +145,6 @@ def mail_enqueries(contact_form):
 {contact_form.email.data}\n
 <p style="font-size:25px;color:red">This is a Test</p>
                     """
-
         # try:
         mail.send(msg)
         flash("Your Message has been Successfully Sent!!", "success")
@@ -157,6 +156,20 @@ def mail_enqueries(contact_form):
         # Send the pwd reset request to the above email
     send_link()
 
+@app.route("/recruitment")
+def recruitment():
+
+    return render_template("job_advert.html")
+
+@app.route('/download/job-advert')
+def download_job_advert():
+    print("Downolading Advert: ",request.remote_addr)
+    return send_from_directory(
+        directory='static/recruitment',
+        path='Q-Messanger_Job_advert_Marketing_Intern.pdf',
+        as_attachment=True,
+        mimetype='application/pdf'
+    )
 
 
 # Press the green button in the gutter to run the script.
