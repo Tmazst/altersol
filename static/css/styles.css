@@ -2146,6 +2146,7 @@ to{
         overflow: auto;
         padding-top:10px;
         padding-bottom: 10px;
+        justify-content: flex-start;
     }
     #open-job-details{
         width:100% !important;
