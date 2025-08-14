@@ -2148,7 +2148,8 @@ to{
         padding-bottom: 10px;
     }
     #open-job-details{
-        width:100% !important
+        width:100% !important;
+        bottom: -10px;
     }
     .about-content{
         flex-wrap: wrap !important;
